@@ -1,5 +1,5 @@
 const url = `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/list`;
-const test = (document.querySelector = ".test");
+const htmlTest = document.querySelector(".test");
 let html = "";
 
 // const loopThis = (apiData) => {
@@ -24,17 +24,14 @@ export async function getThePlanets() {
     console.log(apiResult[0].basicDetails[0].mass);
 
     for (let i = 0; i < apiResult.length; i++) {
-      console.log(apiResult[i]);
-      html.innerHTML += `<div>
-                        <h2>${apiResult[i].name}</h2>
-                        <p>${apiResult[i].description}</p>
-                        </div>`;
-
-      test.innerhtml = html;
+      console.log(apiResult[i].name);
     }
+    htmlTest.innerHTML += ` <div>
+                            <h2>${apiResult[i].name}</h2>
+                            <p>${apiResult[i].description}</p>
+                            </div>`;
   } catch (error) {
     console.log(error);
   }
-  console.log(apiResult);
 }
 getThePlanets();
