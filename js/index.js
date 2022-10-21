@@ -27,9 +27,9 @@ export async function getThePlanets() {
       console.log(apiResult[i].name);
 
       htmlTest.innerHtml += ` <div>
-      <h2>${apiResult[i].name}</h2>
-      <p>${apiResult[i].description}</p>
-      </div>`;
+                              <h2>${apiResult[i].name}</h2>
+                              <p>${apiResult[i].description}</p>
+                              </div>`;
     }
   } catch (error) {
     console.log(error);
