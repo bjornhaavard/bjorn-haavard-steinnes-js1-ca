@@ -27,7 +27,6 @@ The focus of the CA is on JavaScript, not styling. Yet, as a front-end developer
 
 Both API calls should include a loading indicator.
 
-
 index.html
 
 Make a call to your API URL. Loop through the results and create HTML for each result.
@@ -60,7 +59,6 @@ Set the title of the HTML page to be one of the property values, like name, titl
 
 Catch any errors and display a message on the page if an error occurs.
 
-
 contact.html
 
 Create a form with the following inputs and validation rules.
@@ -69,7 +67,6 @@ Subject - must have a value with a minimum length of 10
 Email - must have a value and be formatted like an email address
 Address - must have a value with a minimum length of 25
 When the form on this page is submitted, write code to validate the input. If any of the inputs fail validation display an error message for the relevant input.
-
 
 Level 2 Process
 
@@ -86,3 +83,7 @@ Create a folder called your-name-js1-ca, e.g. mary-smith-js1-ca
 Add all your code to this folder, zip the folder and submit the zip file
 Time
 40 hours
+
+<!-- ///////Tokens\\\\\\\\ -->
+
+Access token: CL8MzlOaP2xOM7x3xgl5
