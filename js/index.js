@@ -26,7 +26,7 @@ export async function getThePlanets() {
     for (let i = 0; i < apiResult.length; i++) {
       console.log(apiResult[i].name);
 
-      htmlTest.innerHtml += ` <div>
+      htmlTest.innerHTML += ` <div>
                               <h2>${apiResult[i].name}</h2>
                               <p>${apiResult[i].description}</p>
                               </div>`;
