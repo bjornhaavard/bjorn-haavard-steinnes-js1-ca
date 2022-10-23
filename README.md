@@ -84,6 +84,4 @@ Add all your code to this folder, zip the folder and submit the zip file
 Time
 40 hours
 
-<!-- ///////Tokens\\\\\\\\ -->
 
-Access token: CL8MzlOaP2xOM7x3xgl5

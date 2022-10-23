@@ -1,12 +1,10 @@
 const url = `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/list`;
-const htmlTest = document.querySelector(".test");
+const htmlTest = document.querySelector(".container");
+let loader = document.querySelector("#loader")
 let testHtml = "";
 
-// const loopThis = (apiData) => {
-//   for (let i = 0; i < apiData.length; i++) {
-//     console.log(apiData[i]);
-//   }
-// };
+
+
 
 export async function getThePlanets() {
   try {
@@ -20,17 +18,35 @@ export async function getThePlanets() {
     const getUrl = await fetch(url, options);
 
     const apiResult = await getUrl.json();
-
+    console.log(apiResult)
     console.log(apiResult[0].basicDetails[0].mass);
 
-    for (let i = 0; i < apiResult.length; i++) {
-      console.log(apiResult[i].name);
 
-      htmlTest.innerHTML += ` <div>
-                              <h2>${apiResult[i].name}</h2>
-                              <p>${apiResult[i].description}</p>
-                              </div>`;
-    }
+   apiResult.forEach(function (planets) {
+
+      if (apiResult) {
+        loader.style.display = "none"
+      }
+
+        htmlTest.innerHTML += ` <div style=".container">
+      
+        <a href="details.html?id=${planets.id}" >
+        <div class="containerDiv">
+        <h2>${planets.name}</h2>
+        <p>${planets.description}</p>
+        <p>Planet order: ${planets.planetOrder}</p>  
+          </a>  
+          </div>
+       </div>`;
+
+        // return true
+      
+     
+                               
+    });
+
+    
+
   } catch (error) {
     console.log(error);
   }
