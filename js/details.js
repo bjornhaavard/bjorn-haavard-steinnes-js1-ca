@@ -29,6 +29,16 @@ async function getPlanetDetails() {
     const apiResult = await getPlanetUrl.json();
     console.log(apiResult);
     console.log(apiResult[0].basicDetails[0].mass);
+
+    html += `<div class=".container">
+                        <a href="details.html?id=${apiResult[0].basicDetails[0].mass}" >
+                        <div class="containerDiv">
+                        <h2>${planetsApi.name}</h2>
+                        <p>${planetsApi.description}</p>
+                        <p>Planet order: ${planetsApi.planetOrder}</p>  
+                        </a>  
+                        </div>
+                    </div>`;
   } catch (error) {
     console.log(error);
     getPlanetDetailsHtml.innerHTML = error;

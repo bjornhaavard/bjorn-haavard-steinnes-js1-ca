@@ -1,6 +1,6 @@
 const url = `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/list`;
 const planets = document.querySelector(".container");
-let loader = document.querySelector("#loader");
+let loader = document.querySelector(".loader");
 let planetHtml = "";
 
 async function getThePlanets() {
@@ -20,9 +20,9 @@ async function getThePlanets() {
     console.log(apiResult[0].basicDetails[0].mass);
 
     apiResult.forEach((planetsApi) => {
-      //   if (apiResult) {
-      //     loader.style.display = "none";
-      //   }
+      if (apiResult) {
+        loader.style.display = "none";
+      }
 
       planetHtml += `<div style=".container">
                                     <a href="details.html?id=${planetsApi.id}" >
@@ -32,9 +32,8 @@ async function getThePlanets() {
                                     <p>Planet order: ${planetsApi.planetOrder}</p>  
                                     </a>  
                                     </div>
-                              </div>`;
+                             </div>`;
       console.log(planetsApi);
-      //   return true;
       planets.innerHTML = planetHtml;
     });
   } catch (error) {

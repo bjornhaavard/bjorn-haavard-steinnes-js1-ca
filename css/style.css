@@ -1,4 +1,4 @@
-@import url(/css/components/loader.css);
+@import url(components/loader.css);
 
 * {
   box-sizing: border-box;
@@ -31,9 +31,10 @@ a {
 }
 
 .containerDiv {
-  padding: 2rem;
+  padding: 4rem;
   border: solid 10px white;
   margin: 2rem;
+
   border-radius: 1em;
 }
 
