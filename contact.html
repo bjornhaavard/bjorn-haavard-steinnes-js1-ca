@@ -8,7 +8,35 @@
     <title>Contact Form</title>
   </head>
   <body>
+    <main class="container">
+      <form id="contactForm">
+        <div>
+          <label>
+            First name (required)
+            <input placeholder="First name" name="firstName" id="firstName" />
+          </label>
+          <div class="form-error" id="firstNameError">Please enter your first name</div>
+        </div>
 
+        <div>
+          <label>
+            Last name (minimum 4 characters)
+            <input placeholder="Last name" name="lastName" id="lastName" />
+          </label>
+          <div class="form-error" id="lastNameError">Your last name must be at least 4 characters</div>
+        </div>
+
+        <div>
+          <label>
+            Email (required)
+            <input placeholder="Email" name="email" id="email" />
+          </label>
+          <div class="form-error" id="emailError">Please enter a valid email address</div>
+        </div>
+
+        <button>Submit</button>
+      </form>
+    </main>
     <script src="js/contact.js"></script>
   </body>
 </html>

@@ -19,26 +19,27 @@ async function getThePlanets() {
     console.log(apiResult);
     console.log(apiResult[0].basicDetails[0].mass);
 
-    apiResult.forEach(function (planets) {
+    apiResult.forEach((planetsApi) => {
       //   if (apiResult) {
       //     loader.style.display = "none";
       //   }
 
-      planetHtml += `       <div style=".container">
-                                    <a href="details.html?id=${planets.id}" >
+      planetHtml += `<div style=".container">
+                                    <a href="details.html?id=${planetsApi.id}" >
                                     <div class="containerDiv">
-                                    <h2>${planets.name}</h2>
-                                    <p>${planets.description}</p>
-                                    <p>Planet order: ${planets.planetOrder}</p>  
+                                    <h2>${planetsApi.name}</h2>
+                                    <p>${planetsApi.description}</p>
+                                    <p>Planet order: ${planetsApi.planetOrder}</p>  
                                     </a>  
                                     </div>
-                             </div>`;
-
+                              </div>`;
+      console.log(planetsApi);
       //   return true;
+      planets.innerHTML = planetHtml;
     });
-    planets.innerHtml = planetHtml;
   } catch (error) {
     console.log(error);
+    planets.innerHtml = error;
   }
 }
 getThePlanets();

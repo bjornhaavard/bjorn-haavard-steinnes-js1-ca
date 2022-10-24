@@ -10,7 +10,7 @@ const id = params.get("id");
 
 console.log(id);
 
-const url = `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/list/` + id + "1e4972cd5dmsh4c6310fe3e34e92p1be70ejsn26ecc7e83738";
+const url = "https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/" + id;
 
 console.log(url);
 
@@ -24,14 +24,15 @@ async function getPlanetDetails() {
       },
     };
 
-    const getUrl = await fetch(url, options);
+    const getPlanetUrl = await fetch(url, options);
 
-    const apiResult = await getUrl.json();
+    const apiResult = await getPlanetUrl.json();
     console.log(apiResult);
     console.log(apiResult[0].basicDetails[0].mass);
   } catch (error) {
     console.log(error);
+    getPlanetDetailsHtml.innerHTML = error;
   }
 }
 
-getPlanetDetails();
+// getPlanetDetails();
