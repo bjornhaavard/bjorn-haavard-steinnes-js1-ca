@@ -1,12 +1,9 @@
 const url = `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/list`;
-const htmlTest = document.querySelector(".container");
-let loader = document.querySelector("#loader")
-let testHtml = "";
+const planets = document.querySelector(".container");
+let loader = document.querySelector("#loader");
+let planetHtml = "";
 
-
-
-
-export async function getThePlanets() {
+async function getThePlanets() {
   try {
     const options = {
       method: "GET",
@@ -18,35 +15,28 @@ export async function getThePlanets() {
     const getUrl = await fetch(url, options);
 
     const apiResult = await getUrl.json();
-    console.log(apiResult)
+
+    console.log(apiResult);
     console.log(apiResult[0].basicDetails[0].mass);
 
+    apiResult.forEach(function (planets) {
+      //   if (apiResult) {
+      //     loader.style.display = "none";
+      //   }
 
-   apiResult.forEach(function (planets) {
+      planetHtml += `       <div style=".container">
+                                    <a href="details.html?id=${planets.id}" >
+                                    <div class="containerDiv">
+                                    <h2>${planets.name}</h2>
+                                    <p>${planets.description}</p>
+                                    <p>Planet order: ${planets.planetOrder}</p>  
+                                    </a>  
+                                    </div>
+                             </div>`;
 
-      if (apiResult) {
-        loader.style.display = "none"
-      }
-
-        htmlTest.innerHTML += ` <div style=".container">
-      
-        <a href="details.html?id=${planets.id}" >
-        <div class="containerDiv">
-        <h2>${planets.name}</h2>
-        <p>${planets.description}</p>
-        <p>Planet order: ${planets.planetOrder}</p>  
-          </a>  
-          </div>
-       </div>`;
-
-        // return true
-      
-     
-                               
+      //   return true;
     });
-
-    
-
+    planets.innerHtml = planetHtml;
   } catch (error) {
     console.log(error);
   }
