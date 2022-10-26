@@ -1,15 +1,15 @@
-const url = `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/list`;
-const planets = document.querySelector(".container");
+const url = `https://superhero-search.p.rapidapi.com/api/heroes`;
+const heroes = document.querySelector(".container");
 let loader = document.querySelector(".loader");
-let planetHtml = "";
+let heroHtml = "";
 
-async function getThePlanets() {
+async function getTheHeroes() {
   try {
     const options = {
       method: "GET",
       headers: {
         "X-RapidAPI-Key": "1e4972cd5dmsh4c6310fe3e34e92p1be70ejsn26ecc7e83738",
-        "X-RapidAPI-Host": "planets-info-by-newbapi.p.rapidapi.com",
+        "X-RapidAPI-Host": "superhero-search.p.rapidapi.com",
       },
     };
     const getUrl = await fetch(url, options);
@@ -17,28 +17,28 @@ async function getThePlanets() {
     const apiResult = await getUrl.json();
 
     console.log(apiResult);
-    console.log(apiResult[0].basicDetails[0].mass);
+    // console.log(apiResult[0].basicDetails[0].mass);
 
-    apiResult.forEach((planetsApi) => {
+    apiResult.forEach((herosApi) => {
       if (apiResult) {
         loader.style.display = "none";
       }
 
-      planetHtml += `<div style=".container">
-                                    <a href="details.html?id=${planetsApi.id}" >
+      heroHtml += `<div style=".container">
+                                    <a href="details.html?id=${herosApi.id}" >
                                     <div class="containerDiv">
-                                    <h2>${planetsApi.name}</h2>
-                                    <p>${planetsApi.description}</p>
-                                    <p>Planet order: ${planetsApi.planetOrder}</p>  
+                                    <h2>Name: ${herosApi.name}</h2>
+                                    <p>Gender: ${herosApi.appearance.gender}</p>
+                                    <p>Occupation: ${herosApi.work.occupation}</p>  
                                     </a>  
                                     </div>
                              </div>`;
-      console.log(planetsApi);
-      planets.innerHTML = planetHtml;
+      console.log(herosApi);
+      heroes.innerHTML = heroHtml;
     });
   } catch (error) {
     console.log(error);
-    planets.innerHtml = error;
+    heroes.innerHtml = error;
   }
 }
-getThePlanets();
+getTheHeroes();
