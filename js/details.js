@@ -1,15 +1,15 @@
 // import { getThePlanets } from "/js/index.js";
 
-const getHeroDetailsHtml = document.querySelector("detailsContainer");
+const getHeroDetailsHtml = document.querySelector(".detailsContainer");
 
-const queryString = document.location.search;
+const queryString = window.location.search;
 
 const params = new URLSearchParams(queryString);
 
 const id = params.get("id");
 
 if (id === null) {
-  location.href = "/";
+  //   location.href = "/";
 }
 
 console.log(id);
@@ -39,18 +39,18 @@ async function getHeroDetails() {
     console.log(apiResult);
     // console.log(singleObject[0].basicDetails[0].mass);
 
-    html += `<div class=".container">
-                        <h2>${apiResult[0].basicDetails[0].mass}</h2>
-                        <p>${planetsApi.description}</p>
-                        <p>Planet order: ${singleObject[0]}</p>
-                        </a>
-                        </div>
-                    </div>`;
+    // html += `<div class=".container">
+    //                     <h2>${apiResult[0].basicDetails[0].mass}</h2>
+    //                     <p>${planetsApi.description}</p>
+    //                     <p>Planet order: ${singleObject[0]}</p>
+    //                     </a>
+    //                     </div>
+    //                 </div>`;
 
-    getHeroDetailsHtml.innerHTML = html;
+    // getHeroDetailsHtml.innerHTML = html;
   } catch (error) {
     console.log(error);
-    // getHeroDetailsHtml.innerHTML = error;
+    getHeroDetailsHtml.innerHTML = error;
   }
 }
 

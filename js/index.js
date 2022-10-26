@@ -25,7 +25,7 @@ async function getTheHeroes() {
       }
 
       heroHtml += `<div style=".container">
-                                    <a href="details.html?id=${herosApi.id}" >
+                                    <a href="details.html?id=${herosApi.name}" >
                                     <div class="containerDiv">
                                     <h2>Name: ${herosApi.name}</h2>
                                     <p>Gender: ${herosApi.appearance.gender}</p>
