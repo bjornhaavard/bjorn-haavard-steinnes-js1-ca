@@ -1,6 +1,6 @@
 // import { getThePlanets } from "/js/index.js";
 
-const getPlanetDetailsHtml = document.querySelector("detailsContainer");
+const getHeroDetailsHtml = document.querySelector("detailsContainer");
 
 const queryString = document.location.search;
 
@@ -22,7 +22,7 @@ const idContainer = document.querySelector(".id");
 
 const detailContainer = document.querySelector(".details");
 
-async function getPlanetDetails() {
+async function getHeroDetails() {
   try {
     const options = {
       method: "GET",
@@ -32,26 +32,26 @@ async function getPlanetDetails() {
       },
     };
 
-    const getPlanetUrl = await fetch(url, options);
+    const getHerosUrl = await fetch(url, options);
 
-    const apiResult = await getPlanetUrl.json();
+    const apiResult = await getHerosUrl.json();
 
     console.log(apiResult);
     // console.log(singleObject[0].basicDetails[0].mass);
 
-    // html += `<div class=".container">
-    //                     <h2>${apiResult[0].basicDetails[0].mass}</h2>
-    //                     <p>${planetsApi.description}</p>
-    //                     <p>Planet order: ${singleObject[0]}</p>
-    //                     </a>
-    //                     </div>
-    //                 </div>`;
+    html += `<div class=".container">
+                        <h2>${apiResult[0].basicDetails[0].mass}</h2>
+                        <p>${planetsApi.description}</p>
+                        <p>Planet order: ${singleObject[0]}</p>
+                        </a>
+                        </div>
+                    </div>`;
 
-    // getPlanetDetailsHtml.innerHTML = html;
+    getHeroDetailsHtml.innerHTML = html;
   } catch (error) {
     console.log(error);
-    getPlanetDetailsHtml.innerHTML = error;
+    // getHeroDetailsHtml.innerHTML = error;
   }
 }
 
-getPlanetDetails();
+getHeroDetails();
