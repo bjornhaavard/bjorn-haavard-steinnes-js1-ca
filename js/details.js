@@ -1,4 +1,6 @@
 // import { getThePlanets } from "/js/index.js";
+let html;
+let loader = document.querySelector(".loader");
 
 const getHeroDetailsHtml = document.querySelector(".detailsContainer");
 
@@ -9,12 +11,12 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 if (id === null) {
-  //   location.href = "/";
+  location.href = "/";
 }
 
 console.log(id);
 
-const url = "https://superhero-search.p.rapidapi.com/api/heroes/" + id;
+const url = "https://superhero-search.p.rapidapi.com/api/?hero=" + id;
 
 console.log(url);
 
@@ -37,17 +39,21 @@ async function getHeroDetails() {
     const apiResult = await getHerosUrl.json();
 
     console.log(apiResult);
-    // console.log(singleObject[0].basicDetails[0].mass);
+    console.log(apiResult.powerstats.combat);
+    if (apiResult) {
+      loader.style.display = "none";
+    }
+    html += `<div class=".container">
+            <div class="containerDiv">
+                        <h2> ${apiResult.name}</h2>
+                        <p>Power:  ${apiResult.powerstats.power}</p>
+                        <p>Durability: ${apiResult.powerstats.durability}</p>
+                        <p>Combat: ${apiResult.powerstats.combat}</p>
+                        </a>
+                        </div>
+                    </div>`;
 
-    // html += `<div class=".container">
-    //                     <h2>${apiResult[0].basicDetails[0].mass}</h2>
-    //                     <p>${planetsApi.description}</p>
-    //                     <p>Planet order: ${singleObject[0]}</p>
-    //                     </a>
-    //                     </div>
-    //                 </div>`;
-
-    // getHeroDetailsHtml.innerHTML = html;
+    getHeroDetailsHtml.innerHTML = html;
   } catch (error) {
     console.log(error);
     getHeroDetailsHtml.innerHTML = error;
