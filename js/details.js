@@ -8,11 +8,20 @@ const params = new URLSearchParams(queryString);
 
 const id = params.get("id");
 
+if (id === null) {
+  location.href = "/";
+}
+
 console.log(id);
 
 const url = "https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/" + id;
 
 console.log(url);
+
+const idContainer = document.querySelector(".id");
+const detailContainer = document.querySelector(".details");
+
+// idContainer.innerHTML = id;
 
 async function getPlanetDetails() {
   try {
@@ -31,18 +40,18 @@ async function getPlanetDetails() {
     console.log(apiResult[0].basicDetails[0].mass);
 
     html += `<div class=".container">
-                        <a href="details.html?id=${apiResult[0].basicDetails[0].mass}" >
-                        <div class="containerDiv">
-                        <h2>${planetsApi.name}</h2>
+                        <h2>${apiResult[0].basicDetails[0].mass}</h2>
                         <p>${planetsApi.description}</p>
                         <p>Planet order: ${planetsApi.planetOrder}</p>  
                         </a>  
                         </div>
                     </div>`;
+
+    getPlanetDetailsHtml.innerHTML = html;
   } catch (error) {
     console.log(error);
     getPlanetDetailsHtml.innerHTML = error;
   }
 }
 
-// getPlanetDetails();
+getPlanetDetails();
