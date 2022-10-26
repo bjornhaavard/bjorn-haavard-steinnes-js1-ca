@@ -19,9 +19,8 @@ const url = "https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/" + id
 console.log(url);
 
 const idContainer = document.querySelector(".id");
-const detailContainer = document.querySelector(".details");
 
-// idContainer.innerHTML = id;
+const detailContainer = document.querySelector(".details");
 
 async function getPlanetDetails() {
   try {
@@ -36,8 +35,10 @@ async function getPlanetDetails() {
     const getPlanetUrl = await fetch(url, options);
 
     const apiResult = await getPlanetUrl.json();
-    console.log(apiResult);
-    console.log(apiResult[0].basicDetails[0].mass);
+
+    const singleObject = apiResult[0];
+    // console.log(singleObject);
+    // console.log(singleObject[0].basicDetails[0].mass);
 
     html += `<div class=".container">
                         <h2>${apiResult[0].basicDetails[0].mass}</h2>
@@ -54,4 +55,4 @@ async function getPlanetDetails() {
   }
 }
 
-getPlanetDetails();
+// getPlanetDetails();
