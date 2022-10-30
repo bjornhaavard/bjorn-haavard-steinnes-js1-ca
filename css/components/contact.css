@@ -1,4 +1,47 @@
 #contactForm {
-  background-color: blueviolet;
+  background-color: rgb(229, 229, 229);
   color: black;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.form-error {
+  display: none;
+  color: red;
+  font-size: 1rem;
+  font-weight: bold;
+  /* margin: 1em 1em 1em 0; */
+}
+
+form {
+  padding: 5rem;
+  border-radius: 1em;
+}
+
+input {
+  display: flex;
+  padding: 1rem;
+}
+
+button {
+  /* display: flex; */
+  /* justify-content: center; */
+  padding: 1rem 3rem;
+  border-radius: 1em;
+  margin-top: 2rem;
+}
+
+button:hover {
+  background-color: aliceblue;
+  cursor: pointer;
+  border: 3px solid rgb(20, 120, 42);
+}
+
+#messageSent {
+  display: none;
+  color: green;
 }

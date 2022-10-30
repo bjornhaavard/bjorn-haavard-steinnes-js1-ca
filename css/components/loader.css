@@ -11,7 +11,9 @@
 .loader::after {
   content: "";
   box-sizing: border-box;
-  position: absolute;
+  /* position: absolute; */
+  display: flex;
+
   left: 0;
   top: 0;
   background: #ff3d00;

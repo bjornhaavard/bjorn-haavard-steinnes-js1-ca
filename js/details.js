@@ -37,13 +37,11 @@ async function getHeroDetails() {
     const getHerosUrl = await fetch(url, options);
 
     const apiResult = await getHerosUrl.json();
-
     console.log(apiResult);
-    console.log(apiResult.powerstats.combat);
     if (apiResult) {
       loader.style.display = "none";
     }
-    html += `<div class=".container">
+    html += `
             <div class="containerDiv">
                         <h2> ${apiResult.name}</h2>
                         <p>Power:  ${apiResult.powerstats.power}</p>
@@ -51,7 +49,7 @@ async function getHeroDetails() {
                         <p>Combat: ${apiResult.powerstats.combat}</p>
                         </a>
                         </div>
-                    </div>`;
+                    `;
 
     getHeroDetailsHtml.innerHTML = html;
   } catch (error) {

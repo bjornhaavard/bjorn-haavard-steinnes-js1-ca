@@ -9,14 +9,26 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url(https://images.pexels.com/photos/7640905/pexels-photo-7640905.jpeg?cs=srgb&dl=pexels-eva-bronzini-7640905.jpg&fm=jpg&_gl=1*8gq4on*_ga*ODUwNTk5ODUwLjE2MzIyMzg2NTI.*_ga_8JE65Q40S6*MTY2Njg2NjYyNi4zLjEuMTY2Njg2NjY5NC4wLjAuMA..);
 }
 
 a {
   text-decoration: none;
   color: white;
-
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  /* margin: 2rem; */
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+nav * > :hover {
+  text-decoration: underline;
 }
 
 .detailsContainer {
@@ -28,12 +40,9 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   color: rgb(253, 253, 253);
-  display: flex;
-  /* flex-direction: column; */
   text-align: left;
   padding: 1rem;
   margin: 1rem;
-  /* max-width: 500px */
 }
 
 .containerDiv {
@@ -47,6 +56,7 @@ a {
 
 h1 {
   text-align: center;
+  color: white;
   margin-top: 2rem;
 }
 
