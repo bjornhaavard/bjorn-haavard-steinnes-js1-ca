@@ -17,6 +17,10 @@ nav {
   /* margin: 1em 1em 1em 0; */
 }
 
+#messageSent {
+  display: none;
+}
+
 form {
   padding: 5rem;
   border-radius: 1em;

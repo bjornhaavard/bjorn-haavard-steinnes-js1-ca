@@ -37,14 +37,16 @@ function validateInput() {
   console.log("test button");
 }
 
-function submitForm(event) {
-  event.preventDefault();
+function submitForm(success) {
+  success.preventDefault();
   messageSent.innerHTML = `<div id="messageSent>Message sent</div>"`;
-  //   form.reset();
+  messageSent.style.display = "block";
+  form.reset();
+  console.log("test");
 }
 
-form.addEventListener("submit", validateInput, submitForm);
-// submitForm.addEventListener(success);
+form.addEventListener("submit", validateInput);
+form.addEventListener("submit", submitForm);
 
 function checkValue(value, char) {
   if (value.trim().length > char) {

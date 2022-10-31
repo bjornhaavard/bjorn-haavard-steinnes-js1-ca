@@ -36,9 +36,9 @@ nav * > :hover {
 }
 
 .container {
-  display: flex;
+  display: grid;
   justify-content: center;
-  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr;
   color: rgb(253, 253, 253);
   text-align: left;
   padding: 1rem;
