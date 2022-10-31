@@ -1,4 +1,4 @@
-const url = `https://superhero-search.p.rapidapi.com/api/heroes`;
+const url = `https://free-nba.p.rapidapi.com/players/`;
 const heroes = document.querySelector(".container");
 let loader = document.querySelector(".loader");
 let heroHtml = "";
@@ -9,27 +9,30 @@ async function getTheHeroes() {
       method: "GET",
       headers: {
         "X-RapidAPI-Key": "1e4972cd5dmsh4c6310fe3e34e92p1be70ejsn26ecc7e83738",
-        "X-RapidAPI-Host": "superhero-search.p.rapidapi.com",
+        "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
       },
     };
+
     const getUrl = await fetch(url, options);
 
     const apiResult = await getUrl.json();
 
-    console.log(apiResult);
-    // console.log(apiResult[0].basicDetails[0].mass);
+    const apiData = apiResult.data;
 
-    apiResult.forEach((herosApi) => {
-      if (apiResult) {
+    console.log(apiResult);
+
+    apiData.forEach((herosApi) => {
+      if (apiData) {
         loader.style.display = "none";
       }
 
       heroHtml += `<div style=".container">
-                                    <a href="details.html?id=${herosApi.name}" >
+                                    <a href="details.html?id=${herosApi.id}" >
                                     <div class="containerDiv">
-                                    <h2>Name: ${herosApi.name}</h2>
-                                    <p>Gender: ${herosApi.appearance.gender}</p>
-                                    <p>Occupation: ${herosApi.work.occupation}</p>  
+                                    <h2>First name: ${herosApi.first_name}</h2>
+                                    <h2>Last name: ${herosApi.last_name}</h2>
+                                    <p>Position: ${herosApi.position}</p>
+                                    <p>Id: ${herosApi.id}</p>
                                     </a>  
                                     </div>
                              </div>`;

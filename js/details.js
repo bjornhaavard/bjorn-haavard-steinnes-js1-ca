@@ -16,7 +16,7 @@ if (id === null) {
 
 console.log(id);
 
-const url = "https://superhero-search.p.rapidapi.com/api/?hero=" + id;
+const url = "https://free-nba.p.rapidapi.com/players/" + id;
 
 console.log(url);
 
@@ -30,23 +30,24 @@ async function getHeroDetails() {
       method: "GET",
       headers: {
         "X-RapidAPI-Key": "1e4972cd5dmsh4c6310fe3e34e92p1be70ejsn26ecc7e83738",
-        "X-RapidAPI-Host": "superhero-search.p.rapidapi.com",
+        "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
       },
     };
-
     const getHerosUrl = await fetch(url, options);
 
     const apiResult = await getHerosUrl.json();
+
+    // const apiData = apiResult.records;
     console.log(apiResult);
     if (apiResult) {
       loader.style.display = "none";
     }
     html += `
             <div class="containerDiv">
-                        <h2> ${apiResult.name}</h2>
-                        <p>Power:  ${apiResult.powerstats.power}</p>
-                        <p>Durability: ${apiResult.powerstats.durability}</p>
-                        <p>Combat: ${apiResult.powerstats.combat}</p>
+                        <h2> ${apiResult.first_name} ${apiResult.last_name}</h2>
+                        <p>Team:  ${apiResult.team.name}</p>
+                        <p>City: ${apiResult.team.city}</p>
+                        <p>Division: ${apiResult.team.division}</p>
                         </a>
                         </div>
                     `;
