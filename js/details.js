@@ -42,14 +42,13 @@ async function getHeroDetails() {
     if (apiResult) {
       loader.style.display = "none";
     }
-    html += `
+    html = `
             <div class="detailsContainer">
             <div class="containerDiv">
                         <h2> ${apiResult.first_name} ${apiResult.last_name}</h2>
                         <p>Team:  ${apiResult.team.name}</p>
                         <p>City: ${apiResult.team.city}</p>
-                        <p>Division: ${apiResult.team.division}</p>
-                        </a>
+                        <p>Division: ${apiResult.team.division}</p>           
                         </div>
                         </div>`;
 

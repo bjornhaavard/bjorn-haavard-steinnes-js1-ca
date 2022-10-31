@@ -8,7 +8,7 @@ const emailError = document.querySelector("#emailError");
 const subject = document.querySelector("#subject");
 const subjectError = document.querySelector("#subjectError");
 
-function validateInput() {
+function validateInput(event) {
   event.preventDefault();
 
   if (checkValue(fullName.value, 5)) {
