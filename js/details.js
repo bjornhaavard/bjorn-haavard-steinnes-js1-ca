@@ -37,7 +37,6 @@ async function getHeroDetails() {
 
     const apiResult = await getHerosUrl.json();
 
-    // const apiData = apiResult.records;
     console.log(apiResult);
     if (apiResult) {
       loader.style.display = "none";

@@ -22,8 +22,10 @@ nav {
   /* margin: 1em 1em 1em 0; */
 }
 
-#messageSent {
-  /* display: none; */
+.messageSent {
+  display: none;
+  font-size: 2rem;
+  color: green;
 }
 
 form {
@@ -50,9 +52,4 @@ button:hover {
   background-color: aliceblue;
   cursor: pointer;
   border: 3px solid rgb(20, 120, 42);
-}
-
-#messageSent {
-  display: none;
-  color: green;
 }

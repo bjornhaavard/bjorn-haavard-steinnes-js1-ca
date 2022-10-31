@@ -35,28 +35,15 @@ function validateInput(event) {
     subjectError.style.display = "block";
   }
 
-  if (checkValue(fullName.value, 5) && checkValue(address.value, 25) && validateEmail(email.value, 0) && checkValue(subject.value, 10)) {
+  if (checkValue(fullName.value, 5) && checkValue(address.value, 25) && validateEmail(email.value) && checkValue(subject.value, 10)) {
     messageSent.innerHTML = `<div id="messageSent"> Message sent </div>`;
     messageSent.style.display = "block";
     form.reset();
     console.log("test");
   }
-
-  // console.log("test button");
 }
 
-// function submitForm(success) {
-//   if (validateInput) {
-//     success.preventDefault();
-//     messageSent.innerHTML = `<div id="messageSent">Message sent</div>`;
-//     messageSent.style.display = "block";
-//     form.reset();
-//     console.log("test");
-//   }
-// }
-
 form.addEventListener("submit", validateInput);
-// form.addEventListener("submit", submitForm);
 
 function checkValue(value, char) {
   if (value.trim().length > char) {
