@@ -3,6 +3,11 @@
   color: black;
 }
 
+.contact-container {
+  display: flex;
+  justify-content: center;
+}
+
 nav {
   display: flex;
   justify-content: center;
@@ -22,13 +27,14 @@ nav {
 }
 
 form {
-  padding: 5rem;
+  padding: 6rem;
   border-radius: 1em;
 }
 
 input {
   display: flex;
   padding: 1rem;
+  margin: 1rem;
 }
 
 button {
