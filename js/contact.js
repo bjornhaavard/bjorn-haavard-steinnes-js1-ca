@@ -38,11 +38,13 @@ function validateInput() {
 }
 
 function submitForm(success) {
-  success.preventDefault();
-  messageSent.innerHTML = `<div id="messageSent>Message sent</div>"`;
-  messageSent.style.display = "block";
-  form.reset();
-  console.log("test");
+  if (validateInput) {
+    success.preventDefault();
+    messageSent.innerHTML = `<div id="messageSent>Message sent</div>`;
+    messageSent.style.display = "block";
+    form.reset();
+    console.log("test");
+  }
 }
 
 form.addEventListener("submit", validateInput);

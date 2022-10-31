@@ -43,6 +43,7 @@ async function getHeroDetails() {
       loader.style.display = "none";
     }
     html += `
+            <div class="detailsContainer">
             <div class="containerDiv">
                         <h2> ${apiResult.first_name} ${apiResult.last_name}</h2>
                         <p>Team:  ${apiResult.team.name}</p>
@@ -50,7 +51,7 @@ async function getHeroDetails() {
                         <p>Division: ${apiResult.team.division}</p>
                         </a>
                         </div>
-                    `;
+                        </div>`;
 
     getHeroDetailsHtml.innerHTML = html;
   } catch (error) {
