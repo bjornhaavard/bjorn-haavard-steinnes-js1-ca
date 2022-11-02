@@ -1,9 +1,9 @@
 const url = `https://free-nba.p.rapidapi.com/players/`;
-const heroes = document.querySelector(".container");
-let loader = document.querySelector(".loader");
+const players = document.querySelector(".container");
+let loader = document.querySelector(".lds-hourglass");
 let heroHtml = "";
 
-async function getTheHeroes() {
+async function getThePlayers() {
   try {
     const options = {
       method: "GET",
@@ -21,27 +21,27 @@ async function getTheHeroes() {
 
     console.log(apiResult);
 
-    apiData.forEach((herosApi) => {
+    apiData.forEach((nbaApi) => {
       if (apiData) {
         loader.style.display = "none";
       }
 
       heroHtml += `<div style=".container">
-                                    <a href="details.html?id=${herosApi.id}" >
+                                    <a href="details.html?id=${nbaApi.id}" >
                                     <div class="containerDiv">
-                                    <h2>First name: ${herosApi.first_name}</h2>
-                                    <h2>Last name: ${herosApi.last_name}</h2>
-                                    <p>Position: ${herosApi.position}</p>
-                                    <p>Id: ${herosApi.id}</p>
+                                    <h2>First name: ${nbaApi.first_name}</h2>
+                                    <h2>Last name: ${nbaApi.last_name}</h2>
+                                    <p>Position: ${nbaApi.position}</p>
+                                    <p>Id: ${nbaApi.id}</p>
                                     </a>  
                                     </div>
                              </div>`;
-      console.log(herosApi);
-      heroes.innerHTML = heroHtml;
+      console.log(nbaApi);
+      players.innerHTML = heroHtml;
     });
   } catch (error) {
     console.log(error);
-    heroes.innerHtml = error;
+    players.innerHtml = error;
   }
 }
-getTheHeroes();
+getThePlayers();

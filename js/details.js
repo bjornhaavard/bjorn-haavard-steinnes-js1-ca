@@ -1,6 +1,6 @@
 // import { getThePlanets } from "/js/index.js";
 let html;
-let loader = document.querySelector(".loader");
+let loader = document.querySelector(".lds-hourglass");
 
 const getHeroDetailsHtml = document.querySelector(".detailsContainer");
 
@@ -41,9 +41,8 @@ async function getHeroDetails() {
     if (apiResult) {
       loader.style.display = "none";
     }
-    html = `
-            <div class="detailsContainer">
-            <div class="containerDiv">
+                html = `<div class="detailsContainer">
+                        <div class="containerDiv">
                         <h2> ${apiResult.first_name} ${apiResult.last_name}</h2>
                         <p>Team:  ${apiResult.team.name}</p>
                         <p>City: ${apiResult.team.city}</p>
