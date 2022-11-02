@@ -46,7 +46,7 @@ nav * > :hover {
 .container {
   display: grid;
   justify-content: center;
-  grid-template-columns: 400px 400px 400px;
+  grid-template-columns: 500px 500px 500px;
   color: rgb(253, 253, 253);
   text-align: left;
   padding: 1rem;
@@ -84,13 +84,13 @@ p {
   font-weight: 600;
 }
 
-@media only screen and (max-width: 756px) {
+@media only screen and (max-width: 764px) {
   .container {
     display: flex;
     flex-direction: column;
   }
 }
-@media only screen and (max-width: 1163px) {
+@media only screen and (max-width: 1460px) {
   .container {
     grid-template-columns: 400px 400px;
   }
