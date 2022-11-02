@@ -9,7 +9,8 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url(https://images.pexels.com/photos/7640905/pexels-photo-7640905.jpeg?cs=srgb&dl=pexels-eva-bronzini-7640905.jpg&fm=jpg&_gl=1*8gq4on*_ga*ODUwNTk5ODUwLjE2MzIyMzg2NTI.*_ga_8JE65Q40S6*MTY2Njg2NjYyNi4zLjEuMTY2Njg2NjY5NC4wLjAuMA..);
+  /* background-image: url(https://images.pexels.com/photos/7640905/pexels-photo-7640905.jpeg?cs=srgb&dl=pexels-eva-bronzini-7640905.jpg&fm=jpg&_gl=1*8gq4on*_ga*ODUwNTk5ODUwLjE2MzIyMzg2NTI.*_ga_8JE65Q40S6*MTY2Njg2NjYyNi4zLjEuMTY2Njg2NjY5NC4wLjAuMA..); */
+  background-color: rgb(118, 74, 22);
 }
 
 a {
@@ -37,6 +38,11 @@ nav * > :hover {
   justify-content: center;
 }
 
+.top {
+  background-color: black;
+  padding: 2rem;
+}
+
 .container {
   display: grid;
   justify-content: center;
@@ -49,8 +55,8 @@ nav * > :hover {
 
 .containerDiv {
   padding: 4rem;
-  background-color: rgb(28, 6, 49);
-  border: solid 10px rgb(73, 86, 197);
+  background-color: rgb(2, 1, 4);
+  border: solid 10px rgb(213, 125, 18);
   margin: 2rem;
   border-radius: 1em;
 }
@@ -78,17 +84,14 @@ p {
   font-weight: 600;
 }
 
-@media  only screen and (max-width: 756px) {
-    .container {
-        display: flex;
-        flex-direction: column;
-    }
-
+@media only screen and (max-width: 756px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
 }
-@media  only screen and (max-width: 1163px) {
-    .container {
-        grid-template-columns: 400px 400px ;
-        
-    }
-
+@media only screen and (max-width: 1163px) {
+  .container {
+    grid-template-columns: 400px 400px;
+  }
 }
