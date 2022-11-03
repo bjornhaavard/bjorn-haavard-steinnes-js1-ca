@@ -40,6 +40,8 @@ nav * > :hover {
 .top {
   background-color: black;
   padding: 2rem;
+  color: white;
+  text-align: center;
 }
 
 .container {
