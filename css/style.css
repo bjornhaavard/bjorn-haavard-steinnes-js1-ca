@@ -21,7 +21,7 @@ a {
 .nav {
   display: flex;
   justify-content: space-around;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   font-size: 2rem;
   font-weight: bold;
 }
@@ -40,8 +40,6 @@ nav * > :hover {
 .top {
   background-color: black;
   padding: 2rem;
-  color: white;
-  text-align: center;
 }
 
 .container {
@@ -83,6 +81,14 @@ p {
 p {
   margin-top: 1rem;
   font-weight: 600;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-top: 60vh;
+  padding: 1rem;
 }
 
 @media only screen and (max-width: 764px) {
