@@ -41,7 +41,8 @@ async function getThePlayers() {
     });
   } catch (error) {
     console.log(error);
-    players.innerHtml = error;
+    loader.style.display = "none";
+    players.innerHTML = `<div class"container"></div><div class="error">There was an error: ${error}</div>`;
   }
 }
 getThePlayers();

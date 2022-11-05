@@ -1,8 +1,7 @@
-// import { getThePlanets } from "/js/index.js";
 let html;
 let loader = document.querySelector(".lds-hourglass");
 
-const getHeroDetailsHtml = document.querySelector(".detailsContainer");
+const getPlayerDetailsHtml = document.querySelector(".detailsContainer");
 
 const queryString = window.location.search;
 
@@ -14,17 +13,13 @@ if (id === null) {
   location.href = "/";
 }
 
-console.log(id);
-
 const url = "https://free-nba.p.rapidapi.com/players/" + id;
-
-console.log(url);
 
 const idContainer = document.querySelector(".id");
 
 const detailContainer = document.querySelector(".details");
 
-async function getHeroDetails() {
+async function getPlayerDetails() {
   try {
     const options = {
       method: "GET",
@@ -33,15 +28,14 @@ async function getHeroDetails() {
         "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
       },
     };
-    const getHerosUrl = await fetch(url, options);
+    const getPlayerUrl = await fetch(url, options);
 
-    const apiResult = await getHerosUrl.json();
+    const apiResult = await getPlayerUrl.json();
 
-    console.log(apiResult);
     if (apiResult) {
       loader.style.display = "none";
     }
-                html = `<div class="detailsContainer">
+    html = `<div class="detailsContainer">
                         <div class="containerDiv">
                         <h2> ${apiResult.first_name} ${apiResult.last_name}</h2>
                         <p>Team:  ${apiResult.team.name}</p>
@@ -50,11 +44,12 @@ async function getHeroDetails() {
                         </div>
                         </div>`;
 
-    getHeroDetailsHtml.innerHTML = html;
+    getPlayerDetailsHtml.innerHTML = html;
   } catch (error) {
     console.log(error);
-    getHeroDetailsHtml.innerHTML = error;
+    loader.style.display = "none";
+    getPlayerDetailsHtml.innerHTML += `<div class"detailsContainer"></div><div class="error">There was an error: ${error}</div>`;
   }
 }
 
-getHeroDetails();
+getPlayerDetails();

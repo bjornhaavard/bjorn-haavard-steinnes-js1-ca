@@ -9,10 +9,8 @@ const subject = document.querySelector("#subject");
 const subjectError = document.querySelector("#subjectError");
 const messageSent = document.querySelector("#messageSent");
 
-
 function validateInput(event) {
   event.preventDefault();
-  
 
   if (checkValue(fullName.value, 5)) {
     fullNameError.style.display = "none";
@@ -41,7 +39,6 @@ function validateInput(event) {
     messageSent.innerHTML = `<div id="messageSent"> Message sent </div>`;
     messageSent.style.display = "block";
     form.reset();
-    console.log("test");
   }
 }
 
