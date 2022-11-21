@@ -45,7 +45,7 @@ function validateInput(event) {
 form.addEventListener("submit", validateInput);
 
 function checkValue(value, char) {
-  if (value.trim().length > char) {
+  if (value.trim().length >= char) {
     return true;
   } else {
     return false;

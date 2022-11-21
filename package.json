@@ -1,0 +1,22 @@
+{
+  "name": "bjorn-haavard-steinnes-js1-ca",
+  "version": "0.0.1",
+  "description": "apiCall_js1_ca",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjornhaavard/bjorn-haavard-steinnes-js1-ca.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bjornhaavard/bjorn-haavard-steinnes-js1-ca/issues"
+  },
+  "homepage": "https://github.com/bjornhaavard/bjorn-haavard-steinnes-js1-ca#readme",
+  "devDependencies": {
+    "eslint": "^8.28.0"
+  }
+}
