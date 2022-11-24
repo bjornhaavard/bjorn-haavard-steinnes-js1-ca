@@ -1,4 +1,7 @@
-const url = `https://free-nba.p.rapidapi.com/players/`;
+import { Api_url } from "./constants/api.js";
+import { headers } from "./constants/api.js";
+// const url = ;
+
 const players = document.querySelector(".container");
 let loader = document.querySelector(".lds-hourglass");
 let heroHtml = "";
@@ -7,13 +10,10 @@ async function getThePlayers() {
   try {
     const options = {
       method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "1e4972cd5dmsh4c6310fe3e34e92p1be70ejsn26ecc7e83738",
-        "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
-      },
+      headers,
     };
 
-    const getUrl = await fetch(url, options);
+    const getUrl = await fetch(Api_url, options);
 
     const apiResult = await getUrl.json();
 
