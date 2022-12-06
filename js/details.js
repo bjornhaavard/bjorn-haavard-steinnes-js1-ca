@@ -21,9 +21,7 @@ if (id === null) {
 
 const url = Api_url + id;
 
-// const idContainer = document.querySelector(".id");
 
-// const detailContainer = document.querySelector(".details");
 
 async function getPlayerDetails() {
   try {

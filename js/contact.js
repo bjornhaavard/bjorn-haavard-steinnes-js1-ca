@@ -12,7 +12,7 @@ const messageSent = document.querySelector("#messageSent");
 function validateInput(event) {
   event.preventDefault();
 
-  if (checkValue(fullName.value, 5)) {
+  if (checkValue(fullName.value, 6)) {
     fullNameError.style.display = "none";
   } else {
     fullNameError.style.display = "block";
@@ -36,7 +36,7 @@ function validateInput(event) {
   }
 
   if (checkValue(fullName.value, 5) && checkValue(address.value, 25) && validateEmail(email.value) && checkValue(subject.value, 10)) {
-    messageSent.innerHTML = `<div id="messageSent"> Message sent </div>`;
+    messageSent.innerHTML = `<div id="messageSent">Message sent</div>`;
     messageSent.style.display = "block";
     form.reset();
   }
@@ -51,6 +51,7 @@ function checkValue(value, char) {
     return false;
   }
 }
+
 
 function validateEmail(email) {
   const regEx = /\S+@\S+\.\S+/;
